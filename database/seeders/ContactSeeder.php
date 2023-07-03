@@ -27,5 +27,4 @@ class ContactSeeder extends Seeder
         DB::table('contacts')->truncate();
         DB::table('contacts')->insert($contacts);
     }
-
 }
