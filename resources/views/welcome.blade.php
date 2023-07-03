@@ -9,7 +9,6 @@
                     <a href="#" class="btn btn-primary mx-2">Sign up</a>
                     <a href="#" class="btn btn-outline-secondary mx-2">Sign in</a>
                 </div>
-                <a href="/contacts" class="btn btn-primary mx-2 mt-2">Contacts</a>
             </div>
         </div>
     </div>

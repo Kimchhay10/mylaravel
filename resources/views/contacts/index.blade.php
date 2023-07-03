@@ -9,7 +9,7 @@
                             <div class="d-flex justify-content-between">
                                 <h4 class="m-0">All Contacts</h4>
                                 <div class="m-0">
-                                    <a href="{{ route('contacts.create') }}" class="btn btn-success">
+                                    <a href="{{route('contacts.create')}}" class="btn btn-success">
                                         <i class="bi bi-plus-square"></i> Add New
                                     </a>
                                 </div>
@@ -20,27 +20,36 @@
                             <div class="table-responsive">
                                 <table class="table table-striped table-hover">
                                     <thead>
-                                        <tr>
-                                            <th scope="col">ID</th>
-                                            <th scope="col">First Name</th>
-                                            <th scope="col">Last Name</th>
-                                            <th scope="col">Email</th>
-                                            <th scope="col">Company</th>
-                                            <th scope="col">Actions</th>
-                                        </tr>
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">First Name</th>
+                                        <th scope="col">Last Name</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Company</th>
+                                        <th scope="col">Actions</th>
+                                    </tr>
 
                                     </thead>
                                     <tbody>
-                                        @forelse($contacts as $key => $contact)
-                                            @includeif('contacts._contact')
-                                        @empty
-                                            @includeif('contacts._empty')
-                                        @endforelse
+                                    @forelse($contacts as $key => $contact)
+                                        @includeif('contacts._contact')
+                                    @empty
+                                        @includeif('contacts._empty')
+                                    @endforelse
                                     </tbody>
                                 </table>
-                                {{ $contacts->withQueryString()->links() }}
                             </div>
                         </div>
+                        <nav class="my-2">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a></li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
             </div>

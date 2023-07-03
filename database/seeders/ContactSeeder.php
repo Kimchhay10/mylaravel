@@ -1,30 +1,41 @@
 <?php
 
 namespace Database\Seeders;
+
+use App\Models\Contact;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+
 class ContactSeeder extends Seeder
 {
     /**
      * Run the database seeds.
+     *
+     * @return void
      */
     public function run()
     {
-        $contacts = [];
-        foreach(range(1,50) as $index){
-        $contact=[
-            'first_name' => 'First name '.$index,
-            'last_name' => 'Last name '.$index,
-            'phone' => 'Phone'. $index,
-            'email' => 'email'.$index.'@company.com',
-            'address' => 'Address '.$index,
-            'company_id' => random_int(1,9),
+        //
+        Contact::create([
+            'first_name' => 'Fist name 1',
+            'last_name' => 'Last name 1',
+            'phone' => 'phone 1',
+            'email' => 'email1@email.com',
+            'address' => 'City 1',
+            'company_id' => 1,
             'created_at' => now(),
-            'updated_at' => now()
-        ];
-        $contacts[] = $contact;
-        }
-        DB::table('contacts')->truncate();
-        DB::table('contacts')->insert($contacts);
+            'updated_at' => now(),
+        ]);
+        Contact::create([
+            'first_name' => 'Fist name 2',
+            'last_name' => 'Last name 2',
+            'phone' => 'phone 2',
+            'email' => 'email2@email.com',
+            'address' => 'City 2',
+            'company_id' => 2,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
     }
 }
